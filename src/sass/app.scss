@@ -1,0 +1,23 @@
+// base css
+@import "base/reset";
+@import "base/mixin";
+//@import "base/variable";
+
+//@import "util/grid";
+
+@import "util/border";
+
+
+html, body {
+  position: relative;
+  width: 100%;
+  //height: 100%;
+  //overflow: hidden;
+}
+
+body{
+  background: #F7F7F7;
+  @include font-dpr(12px);
+}
+
+@import "component/issue";
