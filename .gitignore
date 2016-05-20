@@ -1,8 +1,4 @@
-*.idea
 .idea
-idea
 .DS_Store
 *.DS_Store
-*.log
-logs
 node_modules

@@ -1,4 +1,4 @@
-##Roobo
+### Todo...
 
 
 ###文档目录结构
@@ -25,4 +25,4 @@ project/                         项目名称
 ├── node_modules/               gulpjs依赖文件
 ├── gulpfile.js                 gulp构建脚本
 ├── .jshintrc                   jshint配置文件
-└── bower.json                  bower置文件
+└── webpack.config.json                  webpack置文件
