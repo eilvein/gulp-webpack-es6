@@ -1,0 +1,7 @@
+{
+    "presets": ["es2015"],
+    "ignore":[
+        "jquery.js",
+        "jquery.min.js"
+    ]
+}
