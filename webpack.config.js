@@ -34,7 +34,9 @@ module.exports = {
            'window.jQuery': 'jquery'
        }),
        new webpack.optimize.CommonsChunkPlugin({
-           name: ['vendors']
+           name: 'vendors',
+        //    filename: 'vendors.[hash].js',
+           minChunks: Infinity
        }),
        new webpack.NoEmitOnErrorsPlugin()
     ]

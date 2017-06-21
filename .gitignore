@@ -5,3 +5,4 @@ node_modules
 projectName/rev
 projectName/release
 projectName/dist
+package-lock.json
