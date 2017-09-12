@@ -55,7 +55,50 @@ module.exports = function(){
         output: 'dist/',
         input: 'src/',
         root: ROOT_PATH,
-        release:'release/'
+        release:'../release/',
+        en: {
+            html: [
+                'en/*.html',
+                'en/templates*/*.html',
+                'en/favicon.png'
+            ],
+            relhtml: [
+                'rev/**/*.json',
+                'en/*.html',
+                'en/favicon.png'
+            ],
+            less: [
+                'en/less/*.less'
+            ],
+            allless: [
+                'en/less/**/*.less'
+            ],
+            sass: [
+                'en/sass/*.scss'
+            ],
+            allsass: [
+                'en/sass/**/*.scss'
+            ],
+            css: [
+                'en/less/**/*.css'
+            ],
+            js: [
+                'en/js/**/*.js'
+            ],
+            img: [
+                'en/img/**/*'
+            ],
+            fonts: [
+                'en/fonts/**/*'
+            ],
+            data: [
+                'en/data/**/*'
+            ],
+            output: 'dist/en/',
+            input: 'en/',
+            root: ROOT_PATH,
+            release:'../release/en/'
+        }
     };
 
     return config;

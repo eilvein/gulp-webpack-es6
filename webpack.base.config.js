@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ROOT_PATH = path.resolve(process.cwd());
 
-module.exports = {
+const config = {
     entry: {
         main: ROOT_PATH + "/src/js/main",
         vendors:['jquery', 'util']
@@ -24,7 +24,7 @@ module.exports = {
         extensions: ['.js'],
         alias: {
             jquery: path.join(ROOT_PATH, '/src/js/vendor/2.2.1/jquery'),
-            util: path.join(ROOT_PATH, '/src/js/util/util')
+            util: path.join(ROOT_PATH, '/src/js/util/util'),
         }
     },
     plugins:[
@@ -40,4 +40,6 @@ module.exports = {
        }),
        new webpack.NoEmitOnErrorsPlugin()
     ]
-}
+};
+
+module.exports = config;
