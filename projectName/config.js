@@ -58,44 +58,44 @@ module.exports = function(){
         release:'../release/',
         en: {
             html: [
-                'en/*.html',
-                'en/templates*/*.html',
-                'en/favicon.png'
+                'src-en/*.html',
+                'src-en/templates*/*.html',
+                'src-en/favicon.png'
             ],
             relhtml: [
                 'rev/**/*.json',
-                'en/*.html',
-                'en/favicon.png'
+                'src-en/*.html',
+                'src-en/favicon.png'
             ],
             less: [
-                'en/less/*.less'
+                'src-en/less/*.less'
             ],
             allless: [
-                'en/less/**/*.less'
+                'src-en/less/**/*.less'
             ],
             sass: [
-                'en/sass/*.scss'
+                'src-en/sass/*.scss'
             ],
             allsass: [
-                'en/sass/**/*.scss'
+                'src-en/sass/**/*.scss'
             ],
             css: [
-                'en/less/**/*.css'
+                'src-en/less/**/*.css'
             ],
             js: [
-                'en/js/**/*.js'
+                'src-en/js/**/*.js'
             ],
             img: [
-                'en/img/**/*'
+                'src-en/img/**/*'
             ],
             fonts: [
-                'en/fonts/**/*'
+                'src-en/fonts/**/*'
             ],
             data: [
-                'en/data/**/*'
+                'src-en/data/**/*'
             ],
             output: 'dist/en/',
-            input: 'en/',
+            input: 'src-en/',
             root: ROOT_PATH,
             release:'../release/en/'
         }

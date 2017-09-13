@@ -65,7 +65,7 @@ module.exports = function (gulp, Plugin, config) {
 
     // webapack js
     gulp.task('dev:webpack:en', () => {
-        let jsSrc = config.src.js,
+        let jsSrc = config.en.js,
             jsDst = config.en.output + 'js';
 
         return gulp.src(jsSrc)
@@ -76,7 +76,7 @@ module.exports = function (gulp, Plugin, config) {
 
     // dev js 编译
     gulp.task('devjs:en', function () {
-        var jsSrc = config.src.js,
+        var jsSrc = config.en.js,
             jsDst = config.en.output + 'js';
 
         return gulp.src(jsSrc)
@@ -179,7 +179,7 @@ module.exports = function (gulp, Plugin, config) {
         });
 
         // watch js
-        gulp.watch( config.src.js, function(){
+        gulp.watch( config.en.js, function(){
             gulp.start('devjs:en');
         });
 
@@ -206,7 +206,7 @@ module.exports = function (gulp, Plugin, config) {
         gulp.start('devhtml:en', 'devsass:en', 'devcss:en', 'devless:en', 'dev:webpack:en', 'devimg:en', 'font:en', 'data:en');
 
         // watch js
-        gulp.watch( config.src.js, function(){
+        gulp.watch( config.en.js, function(){
             gulp.start('dev:webpack:en');
         });
 

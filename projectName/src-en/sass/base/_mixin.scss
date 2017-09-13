@@ -1,0 +1,26 @@
+
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+
+//pxtorem
+@function px2rem($px){
+    @return $px/75 * 1rem;
+}
+@function v2($v){
+    @return $v/2;
+}
+
+@mixin bgz($value){
+    -webkit-background-size: $value;
+    background-size: $value;
+}
