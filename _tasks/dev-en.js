@@ -70,7 +70,7 @@ module.exports = function (gulp, Plugin, config) {
 
         return gulp.src(jsSrc)
             .pipe(Plugin.plumber({errorHandler: Plugin.notify.onError('Error: <%= error.message %>')}))
-            .pipe(Plugin.webpackStream(Plugin.webpackConfig, Plugin.webpack))
+            .pipe(Plugin.webpackStream(Plugin.webpackConfigEn, Plugin.webpack))
             .pipe(gulp.dest(jsDst));
     })
 

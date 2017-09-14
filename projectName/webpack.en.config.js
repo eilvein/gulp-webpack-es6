@@ -7,8 +7,8 @@ const ROOT_PATH = path.resolve(process.cwd());
 
 const devConfig = webpackMerge(webpackBaseConf, {
     entry: {
-        main: ROOT_PATH + "/src/js/main",
-        pxtorem: ROOT_PATH + "/src/js/components/pxtorem"
+        main: ROOT_PATH + "/src-en/js/main",
+        pxtorem: ROOT_PATH + "/src-en/js/components/pxtorem"
     }
 });
 

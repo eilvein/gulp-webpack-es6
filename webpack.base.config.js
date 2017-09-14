@@ -5,7 +5,6 @@ const ROOT_PATH = path.resolve(process.cwd());
 
 const config = {
     entry: {
-        main: ROOT_PATH + "/src/js/main",
         vendors:['jquery', 'util']
     },
     output: {

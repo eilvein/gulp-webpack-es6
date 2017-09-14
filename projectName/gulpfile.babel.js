@@ -51,6 +51,7 @@ gulpLoadPlugins.fontmin = require('gulp-fontmin');          	//font编译
 gulpLoadPlugins.webpack = require('webpack');
 gulpLoadPlugins.webpackStream = require('webpack-stream');
 gulpLoadPlugins.webpackConfig = require('./webpack.dev.config');
+gulpLoadPlugins.webpackConfigEn = require('./webpack.en.config');
 
 gulpTaskList.forEach(function(taskfile) {
 	if (taskfile.split('.').pop().toLowerCase() === 'js') {
