@@ -5,61 +5,59 @@
  * @update: 17/6/9
  */
 
-"use strict";
+'use strict'
 
-module.exports = function (gulp, Plugin, config) {
-
+module.exports = function(gulp, Plugin, config) {
     // 部署代码copy到部署库
-    gulp.task('copy', function(){
-        var distFile = config.output + '**/*';
-        var releaseFile = config.release;
+    gulp.task('copy', function() {
+        var distFile = config.output + '**/*'
+        var releaseFile = config.release
 
-        return gulp.src(distFile)
-            .pipe(gulp.dest(releaseFile));
-
-    });
+        return gulp.src(distFile).pipe(gulp.dest(releaseFile))
+    })
 
     // 输出压缩文件
     gulp.task('zip', function() {
-        var distFile = config.output + '**/*';
-        var releaseFile = config.release;
+        var distFile = config.output + '**/*'
+        var releaseFile = config.release
 
         gulp.src(distFile)
-        .pipe(Plugin.zip('archive.zip'))
-        .pipe(gulp.dest(releaseFile));
-    });
+            .pipe(Plugin.zip('archive.zip'))
+            .pipe(gulp.dest(releaseFile))
+    })
 
     // 部署配置
     var configSSH = {
-        host: '172.17.254.121',
+        host: 'IP',
         port: 22,
         username: 'root',
-        password: 'juan3652014'
-    };
+        password: 'xxxxxxx'
+    }
     var gulpSSH = new Plugin.GulpSSH({
         ignoreErrors: false,
         sshConfig: configSSH
-    });
-    gulp.task('exec', function () {
+    })
+    gulp.task('exec', function() {
         return gulpSSH
-            .exec(['uptime', 'ls -a', 'pwd'], {filePath: 'commands.log'})
+            .exec(['uptime', 'ls -a', 'pwd'], { filePath: 'commands.log' })
             .pipe(gulp.dest('logs'))
-    });
+    })
 
     // 部署到web端
-    gulp.task('deploy', function () {
-        var fileDst = config.output + '**/*';
+    gulp.task('deploy', function() {
+        var fileDst = config.output + '**/*'
 
-        return gulp.src(fileDst)
+        return gulp
+            .src(fileDst)
             .pipe(gulpSSH.dest('/roobo/webserver/website/ai/'))
-    });
+    })
 
     // 部署到移动端
-    gulp.task('deploy-m', function () {
-        var fileDst = config.output + '**/*';
+    gulp.task('deploy-m', function() {
+        var fileDst = config.output + '**/*'
 
-        return gulp.src(fileDst)
+        return gulp
+            .src(fileDst)
             .pipe(gulpSSH.dest('/roobo/webserver/website/m/'))
-    });
-
+    })
 }
